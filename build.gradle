@@ -27,7 +27,6 @@ group = 'com.riawolf'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-
 // tag::task[]
 task unpack(type: Copy) {
     dependsOn bootJar
@@ -35,7 +34,7 @@ task unpack(type: Copy) {
     into("build/dependency")
 }
 docker {
-    name "${project.group}/${bootJar.baseName}"
+    name "${project.group}/${rootProject.name}"
     copySpec.from(tasks.unpack.outputs).into("dependency")
     buildArgs(['DEPENDENCY': "dependency"])
 }
