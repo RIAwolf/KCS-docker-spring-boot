@@ -27,6 +27,7 @@ group = 'com.riawolf'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+
 // tag::task[]
 task unpack(type: Copy) {
     dependsOn bootJar
